@@ -1,0 +1,24 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, #e3f2fd, #fce4ec, #f3e5f5);
+  }
+  
+  .open-button {
+    background: linear-gradient(to right, #6366f1, #8b5cf6);
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .open-button:hover {
+    background: linear-gradient(to right, #4f46e5, #7c3aed);
+  }
+  
