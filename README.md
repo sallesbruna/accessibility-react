@@ -1,54 +1,51 @@
-# React + TypeScript + Vite
+# 🔮 PulseModal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, accessible and animated modal component focused on real-world UX.  
+Built with React, TypeScript, Framer Motion and WCAG-compliant accessibility practices.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![React](https://img.shields.io/badge/React-18-blue?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-4.x-blue?logo=typescript)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-Enabled-purple?logo=framer)
+![Accessibility](https://img.shields.io/badge/Accessible-WCAG_2.1-green?logo=accessibility)
+![MIT License](https://img.shields.io/badge/License-MIT-black)
+![Author](https://img.shields.io/badge/Made_by-Bruna_Salles-blueviolet?logo=github)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📸 Preview
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+<img src="./src/assets/pulsemodal-preview.png" width="400" alt="PulseModal Screenshot" />
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ✨ Features
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- Auto-focus on the first input
+- Keyboard focus trap inside the modal
+- Dismiss via `ESC` key or backdrop click
+- Full ARIA support: `aria-modal`, `aria-labelledby`, `aria-describedby`
+- Responsive layout and touch-friendly interactions
+- Smooth open/close animations with Framer Motion
+- Close button positioned top-right with visible focus style
+
+---
+
+## 🚀 Tech Stack
+
+- React 18
+- TypeScript
+- Framer Motion
+- CSS Modules
+- Vite
+
+---
+
+## ▶️ Getting Started
+
+```bash
+git clone https://github.com/sallesbruna/accessibility-react.git
+cd accessibility-react
+npm install
+npm run dev
