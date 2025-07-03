@@ -1,7 +1,7 @@
 # 🔮 PulseModal
 
-A modern, accessible and animated modal component focused on real-world UX.  
-Built with React, TypeScript, Framer Motion and WCAG-compliant accessibility practices.
+A modern, accessible, and animated modal component focused on real-world UX.  
+Built with React, TypeScript, Framer Motion, and WCAG-compliant accessibility practices.
 
 ---
 
@@ -49,3 +49,27 @@ git clone https://github.com/sallesbruna/accessibility-react.git
 cd accessibility-react
 npm install
 npm run dev
+
+---
+
+🧠 Accessibility Highlights
+WCAG 2.1 AA compliant structure
+
+Proper semantic roles (dialog)
+
+Focus visibility and keyboard navigation
+
+Min 44px height on interactive elements (touch targets)
+
+Screen reader label support via .srOnly
+
+✍️ Author
+Created by Bruna Salles
+UX Designer & Creative Developer focused on meaningful experiences, accessibility, and elegance.
+
+📄 License
+MIT — free to use, modify, and distribute with credit.
+
+---
+
+
