@@ -1,18 +1,31 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import styles from './PulseModal.module.css';
 
-// 🟢 AQUI: atualiza a tipagem
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  returnFocusRef: React.RefObject<HTMLElement | null>; // aqui!
+  returnFocusRef: React.RefObject<HTMLElement | null>;
 }
 
 export const PulseModal = ({ isOpen, onClose, returnFocusRef }: ModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
   const firstInputRef = useRef<HTMLInputElement>(null);
+  const [feedback, setFeedback] = useState<null | { type: 'success' | 'error', message: string }>(null);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const email = e.currentTarget.elements.namedItem("email") as HTMLInputElement;
+
+    if (!email.value || !email.value.includes("@")) {
+      setFeedback({ type: "error", message: "Please enter a valid email address." });
+      return;
+    }
+
+    setFeedback({ type: "success", message: "Thanks! You've been subscribed." });
+    email.value = "";
+  };
 
   useEffect(() => {
     if (isOpen) {
@@ -80,32 +93,42 @@ export const PulseModal = ({ isOpen, onClose, returnFocusRef }: ModalProps) => {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
           >
-            <h2 id="modal-title" className={styles.title}>Quero acesso antecipado</h2>
-            <p id="modal-description" className={styles.description}>No spam. Just secret experiences.</p>
-          <form className={styles.form} onSubmit={(e) => {
-              e.preventDefault();
-              // Lógica de envio aqui
-            }}>
+            <h2 id="modal-title" className={styles.title}>Get early access to the good stuff</h2>
+            <p id="modal-description" className={styles.description}>Only the things worth knowing. No spam, ever.</p>
+
+            <form className={styles.form} onSubmit={handleSubmit}>
               <label htmlFor="email" className={styles.srOnly}>Seu e-mail</label>
               <input
                 ref={firstInputRef}
                 id="email"
+                name="email" // essencial para e.currentTarget.elements funcionar
                 type="email"
                 placeholder="Email"
                 className={styles.input}
                 required
               />
               <button type="submit" className={styles.button}>
-                Inscrever-se
+                Count me in
               </button>
             </form>
-        <button
-            onClick={onClose}
-            aria-label="Close form"
-            className={styles.close}
-          >
-            ✕
-        </button>
+
+            {feedback && (
+              <div
+                className={feedback.type === 'success' ? styles.success : styles.error}
+                role="alert"
+                aria-live="polite"
+              >
+                {feedback.message}
+              </div>
+            )}
+
+            <button
+              onClick={onClose}
+              aria-label="Close form"
+              className={styles.close}
+            >
+              ✕
+            </button>
           </motion.div>
         </motion.div>
       )}

@@ -1,24 +1,32 @@
+/* ---------------------- */
+/* BOTÃO QUE ABRE O MODAL */
+/* ---------------------- */
+.open-button {
+  background-color: #b8c0ff; /* novo tom tech-chic */
+  color: #1c1c1e;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.02em;
+}
+
+.open-button:hover,
+.open-button:focus {
+  background-color: #a0a7e6; /* hover refinado */
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Centraliza o botão no meio da tela */
 .container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to bottom right, #e3f2fd, #fce4ec, #f3e5f5);
-  }
-  
-  .open-button {
-    background: linear-gradient(to right, #6366f1, #8b5cf6);
-    color: white;
-    font-weight: bold;
-    font-size: 1.25rem;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .open-button:hover {
-    background: linear-gradient(to right, #4f46e5, #7c3aed);
-  }
-  
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #e3f2fd, #fce4ec, #f3e5f5);
+}

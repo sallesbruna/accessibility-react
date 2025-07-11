@@ -1,19 +1,20 @@
+/* BACKDROP */
 .backdrop {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.65);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
-  }
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
 
-  /* Extra: espaço melhor no conteúdo */
+/* MODAL */
 .modal {
   background-color: #ffffff;
-  color: #111;
+  color: #1c1c1e;
   border-radius: 16px;
-  padding: 2rem; /* 32px */
+  padding: 2rem;
   width: 100%;
   max-width: 400px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
@@ -21,27 +22,31 @@
   display: flex;
   flex-direction: column;
 }
+
+/* TITLE & DESCRIPTION */
 .title {
-  font-size: 1.625rem; /* ~26px */
+  font-size: 1.625rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 .description {
-  font-size: 1rem; /* 16px */
+  font-size: 1rem;
   margin-bottom: 1.5rem;
   color: #444;
 }
 
+/* FORM */
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* 16px entre input e botão */
+  gap: 1rem;
 }
 
+/* INPUT */
 .input {
   padding: 0.5rem 1rem;
-  height: 30px; /* acessível, confortável e consistente com o botão */
+  height: 44px;
   font-size: 1rem;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -49,13 +54,14 @@
 
 .input:focus {
   outline: none;
-  border-color: #6366f1;
-  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4); /* visual limpo e elegante */
+  border-color: #b8c0ff;
+  box-shadow: 0 0 0 2px rgba(184, 192, 255, 0.4);
 }
 
+/* SUBMIT BUTTON */
 .button {
-  background-color: #6366f1;
-  color: white;
+  background-color: #b8c0ff;
+  color: #1c1c1e;
   font-weight: 600;
   border: none;
   padding: 0.75rem;
@@ -64,14 +70,16 @@
   transition: background 0.2s, transform 0.1s ease;
   font-size: 1rem;
   height: 44px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .button:hover,
 .button:focus {
-  background-color: #4f46e5;
+  background-color: #a0a7e6;
   transform: scale(1.02);
 }
 
+/* CLOSE BUTTON */
 .close {
   position: absolute;
   top: 16px;
@@ -87,9 +95,10 @@
 }
 
 .close:hover {
-  color: #000;
+  color: #1c1c1e;
 }
 
+/* SCREENREADER ONLY */
 .srOnly {
   position: absolute;
   width: 1px;
@@ -100,4 +109,71 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* SUCCESS & ERROR MESSAGES */
+.success,
+.error {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+.success {
+  background-color: #ecfdf5;
+  color: #16a34a;
+  border: 1px solid #16a34a;
+}
+
+.error {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #dc2626;
+}
+
+/* FADE ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CONTAINER CENTRAL */
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #f3f4f6, #fdf2f8, #eef2ff);
+}
+
+/* OPEN BUTTON */
+.open-button {
+  background-color: #b8c0ff;
+  color: #1c1c1e;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  letter-spacing: 0.02em;
+}
+
+.open-button:hover,
+.open-button:focus {
+  background-color: #a0a7e6;
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
